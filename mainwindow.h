@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "ui_mainwindow.h"
+#include "QtSerialPort/QSerialPort"
 
 namespace Ui {
 class MainWindow;
@@ -17,6 +19,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    QSerialPort *serialPort;
+    void scanPorts(QComboBox *combox);
+    void openSerialPort();
 };
 
 #endif // MAINWINDOW_H
