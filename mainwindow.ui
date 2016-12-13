@@ -6,591 +6,310 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>627</width>
-    <height>386</height>
+    <width>710</width>
+    <height>394</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QGroupBox" name="PortSettingsGB_Debug">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>530</x>
       <y>0</y>
-      <width>621</width>
-      <height>301</height>
+      <width>176</width>
+      <height>298</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>1</number>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+     </font>
     </property>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Flash下载</string>
-     </attribute>
-     <widget class="QGroupBox" name="PortSettingsGB_Download">
-      <property name="geometry">
-       <rect>
-        <x>440</x>
-        <y>0</y>
-        <width>176</width>
-        <height>251</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>微软雅黑</family>
-       </font>
-      </property>
-      <property name="title">
-       <string>串口设置</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="1" column="0" colspan="2">
-        <widget class="QPushButton" name="portCtrl_Download">
-         <property name="text">
-          <string>打开串口</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="title">
+     <string>串口设置</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0" colspan="2">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_2">
-           <item>
-            <widget class="QLabel" name="COMLabel">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>端口号</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="BaudLabel">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>波特率</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="ParityLabel">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>校验位</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="DataBitsLabel">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>数据位</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="StopBitsLabel">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>停止位</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="FlowCtrlLabel">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>流控制</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QLabel" name="COMLabel_2">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>端口号</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout">
-           <item>
-            <widget class="QComboBox" name="COMCB_Download">
-             <property name="statusTip">
-              <string>Select port </string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="BAUDCB_Download">
-             <property name="statusTip">
-              <string>Select baudrate</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>115200</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>57600</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>38400</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>19200</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>9600</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="ParityCB_Download">
-             <property name="statusTip">
-              <string>Select parity</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>无校验</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>奇校验</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>偶校验</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="DataBitsCB_Download">
-             <property name="statusTip">
-              <string>Select databits</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>8</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>7</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>6</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>5</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="StopBitsCB_Download">
-             <property name="statusTip">
-              <string>Select stopbits</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>1.5</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>2</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="FlowCtrlCB_Download">
-             <property name="statusTip">
-              <string>Select flowctrl</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>off</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>hardware</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>xonxoff</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QLabel" name="BaudLabel_2">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>波特率</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="ParityLabel_2">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>校验位</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="DataBitsLabel_2">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>数据位</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="StopBitsLabel_2">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>停止位</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="FlowCtrlLabel_2">
+           <property name="font">
+            <font>
+             <family>微软雅黑</family>
+             <pointsize>12</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>流控制</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
-       <item row="2" column="0">
-        <widget class="QCheckBox" name="sharProt">
-         <property name="text">
-          <string>共用调试串口</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>串口调试</string>
-     </attribute>
-     <widget class="QGroupBox" name="PortSettingsGB_Debug">
-      <property name="geometry">
-       <rect>
-        <x>440</x>
-        <y>0</y>
-        <width>176</width>
-        <height>281</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>微软雅黑</family>
-       </font>
-      </property>
-      <property name="title">
-       <string>串口设置</string>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_2">
-       <item row="0" column="0" colspan="2">
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_3">
-           <item>
-            <widget class="QLabel" name="COMLabel_2">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>端口号</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="BaudLabel_2">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>波特率</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="ParityLabel_2">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>校验位</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="DataBitsLabel_2">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>数据位</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="StopBitsLabel_2">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>停止位</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="FlowCtrlLabel_2">
-             <property name="font">
-              <font>
-               <family>微软雅黑</family>
-               <pointsize>12</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>流控制</string>
-             </property>
-            </widget>
-           </item>
-          </layout>
+          <widget class="QComboBox" name="COMCB_Debug">
+           <property name="statusTip">
+            <string>Select port </string>
+           </property>
+          </widget>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_4">
+          <widget class="QComboBox" name="BAUDCB_Debug">
+           <property name="statusTip">
+            <string>Select baudrate</string>
+           </property>
            <item>
-            <widget class="QComboBox" name="COMCB_Debug">
-             <property name="statusTip">
-              <string>Select port </string>
-             </property>
-            </widget>
+            <property name="text">
+             <string>115200</string>
+            </property>
            </item>
            <item>
-            <widget class="QComboBox" name="BAUDCB_Debug">
-             <property name="statusTip">
-              <string>Select baudrate</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>115200</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>57600</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>38400</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>19200</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>9600</string>
-              </property>
-             </item>
-            </widget>
+            <property name="text">
+             <string>57600</string>
+            </property>
            </item>
            <item>
-            <widget class="QComboBox" name="ParityCB_Debug">
-             <property name="statusTip">
-              <string>Select parity</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>无校验</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>奇校验</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>偶校验</string>
-              </property>
-             </item>
-            </widget>
+            <property name="text">
+             <string>38400</string>
+            </property>
            </item>
            <item>
-            <widget class="QComboBox" name="DataBitsCB_Debug">
-             <property name="statusTip">
-              <string>Select databits</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>8</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>7</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>6</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>5</string>
-              </property>
-             </item>
-            </widget>
+            <property name="text">
+             <string>19200</string>
+            </property>
            </item>
            <item>
-            <widget class="QComboBox" name="StopBitsCB_Debug">
-             <property name="statusTip">
-              <string>Select stopbits</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>1</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>1.5</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>2</string>
-              </property>
-             </item>
-            </widget>
+            <property name="text">
+             <string>9600</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="ParityCB_Debug">
+           <property name="statusTip">
+            <string>Select parity</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>无校验</string>
+            </property>
            </item>
            <item>
-            <widget class="QComboBox" name="FlowCtrlCB_Debug">
-             <property name="statusTip">
-              <string>Select flowctrl</string>
-             </property>
-             <item>
-              <property name="text">
-               <string>off</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>hardware</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>xonxoff</string>
-              </property>
-             </item>
-            </widget>
+            <property name="text">
+             <string>奇校验</string>
+            </property>
            </item>
-          </layout>
+           <item>
+            <property name="text">
+             <string>偶校验</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="DataBitsCB_Debug">
+           <property name="statusTip">
+            <string>Select databits</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>8</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>7</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>5</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="StopBitsCB_Debug">
+           <property name="statusTip">
+            <string>Select stopbits</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>1.5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>2</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="FlowCtrlCB_Debug">
+           <property name="statusTip">
+            <string>Select flowctrl</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>off</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>hardware</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>xonxoff</string>
+            </property>
+           </item>
+          </widget>
          </item>
         </layout>
        </item>
-       <item row="2" column="0">
-        <widget class="QPushButton" name="saveLog">
-         <property name="text">
-          <string>保存记录</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" colspan="2">
-        <widget class="QPushButton" name="portCtrl_Debug">
-         <property name="text">
-          <string>打开串口</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="clearWindows">
-         <property name="text">
-          <string>清除窗口</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0" colspan="2">
-        <widget class="QCheckBox" name="hexDisplay">
-         <property name="text">
-          <string>16进制显示</string>
-         </property>
-        </widget>
-       </item>
       </layout>
-      <zorder>portCtrl_Debug</zorder>
-      <zorder>saveLog</zorder>
-      <zorder>clearWindows</zorder>
-      <zorder></zorder>
-      <zorder>hexDisplay</zorder>
-     </widget>
-     <widget class="QTextEdit" name="display">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>441</width>
-        <height>281</height>
-       </rect>
-      </property>
-      <property name="cursor" stdset="0">
-       <cursorShape>IBeamCursor</cursorShape>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </widget>
+     </item>
+     <item row="1" column="0" colspan="2">
+      <widget class="QPushButton" name="portCtrl_Debug">
+       <property name="text">
+        <string>打开串口</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <widget class="QCheckBox" name="hexDisplay">
+       <property name="text">
+        <string>16进制显示</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QPushButton" name="clearWindows">
+       <property name="text">
+        <string>清除窗口</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QPushButton" name="saveLog">
+       <property name="text">
+        <string>保存记录</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+    <zorder>portCtrl_Debug</zorder>
+    <zorder>saveLog</zorder>
+    <zorder>clearWindows</zorder>
+    <zorder></zorder>
+    <zorder>hexDisplay</zorder>
    </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>521</width>
+      <height>291</height>
+     </rect>
+    </property>
+   </widget>
+   <zorder>saveLog</zorder>
+   <zorder>clearWindows</zorder>
+   <zorder>PortSettingsGB_Debug</zorder>
+   <zorder>plainTextEdit</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>627</width>
+     <width>710</width>
      <height>23</height>
     </rect>
    </property>
