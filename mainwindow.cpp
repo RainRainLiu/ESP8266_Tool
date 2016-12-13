@@ -12,7 +12,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     qDebug()<<"statrt";
     scanPorts(ui->COMCB_Debug);
-    scanPorts(ui->COMCB_Download);
 
     //connect(ui->portCtrl_Debug, SIGNAL(pressed()), this, SLOT(openSerialPort()));
 
