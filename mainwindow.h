@@ -20,12 +20,16 @@ public:
 private slots:
     void on_portCtrl_Debug_clicked();
 
+    void on_clearWindows_clicked();
+
 private:
     Ui::MainWindow *ui;
 
     QSerialPort *serialPort;
     void scanPorts(QComboBox *combox);
-    void openSerialPort();
+    bool openSerialPort_Debug();
+    void Read_Data();
+
 };
 
 #endif // MAINWINDOW_H
