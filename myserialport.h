@@ -10,6 +10,7 @@ class mySerialPort : public QObject
 
 private:
     QSerialPort *serialPort;
+    void readData(void);
 
 public:
     explicit mySerialPort(QObject *parent = 0);
@@ -21,7 +22,9 @@ public:
     bool openPort(QString str);
     void closePort(void);
 
+
 signals:
+    void receiceData(QByteArray buf);
 
 public slots:
 };

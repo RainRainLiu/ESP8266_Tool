@@ -3,5 +3,6 @@
         <file>images/clean.png</file>
         <file>images/open.png</file>
         <file>images/close.png</file>
+        <file>images/win.png</file>
     </qresource>
 </RCC>

@@ -11,14 +11,17 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     qDebug()<<"statrt";
-    scanPorts(ui->COMCB_Debug);
+    scanPorts(ui->CB_Port_Debug);
     scanPorts(ui->CB_Port_Download);
-    serialPort = new QSerialPort();
+    serialPort = new mySerialPort();
+
     ui->PB_Download->setValue(0);
-    ui->clearWindows->setIcon(QIcon(":/ico/images/clean.png"));
+    ui->BT_Clean->setIcon(QIcon(":/ico/images/clean.png"));
+    ui->BT_PortSwitch->setIcon(QIcon(":/ico/images/open.png"));
 
 
-    QObject::connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::Read_Data);
+    QObject::connect(serialPort, &mySerialPort::receiceData, this, &MainWindow::receiveDebugInfo);
+
 
 }
 
@@ -27,9 +30,15 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+/******************************************
+ * @函数说明：
+ * @输入参数：
+ * @返回参数：
+ * @修订日期：
+******************************************/
 void MainWindow::scanPorts(QComboBox *combox)
 {
+    combox->clear();
     foreach ( const QSerialPortInfo &Info, QSerialPortInfo::availablePorts())
     {
         combox->addItem(Info.portName(), QVariant());
@@ -37,54 +46,62 @@ void MainWindow::scanPorts(QComboBox *combox)
 
 }
 
-bool MainWindow::openSerialPort_Debug()
+/******************************************
+ * @函数说明：
+ * @输入参数：
+ * @返回参数：
+ * @修订日期：
+******************************************/
+void MainWindow::receiveDebugInfo(QByteArray buf)
 {
-    bool ok;
-
-    serialPort->setBaudRate(ui->BAUDCB_Debug ->currentText().toInt(&ok, 10));
-    serialPort->setPortName(ui->COMCB_Debug->currentText());
-
-    serialPort->setDataBits(QSerialPort::Data8);    //设置数据位数
-    serialPort->setParity(QSerialPort::NoParity);      //设置奇偶校验
-    serialPort->setStopBits(QSerialPort::OneStop);      //设置停止位
-    serialPort->setFlowControl(QSerialPort::NoFlowControl);  //设置流控制
-
-    return serialPort->open(QIODevice::ReadWrite);
-
-}
-
-void MainWindow::Read_Data(void)
-{
-    QByteArray buf;
-    buf = serialPort->readAll();
     if (buf.length() != 0)
     {
         QString str = ui->TE_DdebugInfo->toPlainText();
-        str+=tr(buf);
+        str += tr(buf);
         ui->TE_DdebugInfo->clear();
         ui->TE_DdebugInfo->append(str);
     }
-    buf.clear();
-
 }
-/*******************************
- * 打开串口按键槽
-********************************/
-void MainWindow::on_portCtrl_Debug_clicked()
+/******************************************
+ * @函数说明：
+ * @输入参数：
+ * @返回参数：
+ * @修订日期：
+******************************************/
+void MainWindow::on_BT_PortSwitch_clicked()
 {
-    if (ui->portCtrl_Debug->text() == "关闭串口")
+    serialPort->setBaudRate(ui->CB_BaudRate_Debug->currentText());
+    serialPort->setDataBits(ui->CB_DataBits->currentText());
+    serialPort->setFlowCtrl(ui->CB_FlowCtrl->currentText());
+    serialPort->setParity(ui->CB_Parity->currentText());
+    serialPort->setStopBits(ui->CB_StopBits->currentText());
+
+    if (ui->BT_PortSwitch->text() == "关闭串口")
     {
-        serialPort->close();
-        ui->portCtrl_Debug->setText("打开串口");
+        serialPort->closePort();
+        ui->BT_PortSwitch->setText("打开串口");
+        ui->BT_PortSwitch->setIcon(QIcon(":/ico/images/open.png"));
     }
-    else if (openSerialPort_Debug() == true)
+    else if (serialPort->openPort(ui->CB_Port_Debug->currentText()) == true)
     {
-       ui->portCtrl_Debug->setText("关闭串口");
+        ui->BT_PortSwitch->setText("关闭串口");
+        ui->BT_PortSwitch->setIcon(QIcon(":/ico/images/close.png"));
     }
 
 }
 
-void MainWindow::on_clearWindows_clicked()
+void MainWindow::on_CB_Port_Debug_activated(const QString &arg1)
+{
+    scanPorts(ui->CB_Port_Debug);
+    scanPorts(ui->CB_Port_Download);
+}
+/******************************************
+ * @函数说明：
+ * @输入参数：
+ * @返回参数：
+ * @修订日期：
+******************************************/
+void MainWindow::on_BT_Clean_clicked()
 {
     ui->TE_DdebugInfo->clear();
 }

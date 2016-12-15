@@ -5,6 +5,8 @@
 mySerialPort::mySerialPort(QObject *parent) : QObject(parent)
 {
     serialPort = new QSerialPort();
+
+    QObject::connect(serialPort, &QSerialPort::readyRead, this, &mySerialPort::readData);
 }
 /******************************************
  * @函数说明：
@@ -129,4 +131,20 @@ bool mySerialPort::openPort(QString str)
 void mySerialPort::closePort(void)
 {
     serialPort->close();
+}
+/******************************************
+ * @函数说明：
+ * @输入参数：
+ * @返回参数：
+ * @修订日期：
+******************************************/
+void mySerialPort::readData(void)
+{
+    QByteArray buf;
+    buf = serialPort->readAll();
+    if (buf.length() != 0)
+    {
+        emit receiceData(buf);
+    }
+    buf.clear();
 }

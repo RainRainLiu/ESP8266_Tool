@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "ui_mainwindow.h"
 #include "QtSerialPort/QSerialPort"
+#include "myserialport.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,17 +19,22 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_portCtrl_Debug_clicked();
 
-    void on_clearWindows_clicked();
+    void on_BT_PortSwitch_clicked();
+
+    void on_CB_Port_Debug_activated(const QString &arg1);
+
+    void on_BT_Clean_clicked();
 
 private:
     Ui::MainWindow *ui;
 
-    QSerialPort *serialPort;
+    //QSerialPort *serialPort;
     void scanPorts(QComboBox *combox);
     bool openSerialPort_Debug();
-    void Read_Data();
+    void receiveDebugInfo(QByteArray buf);
+
+    mySerialPort *serialPort;
 
 };
 

@@ -19,6 +19,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="esp8266_tool.qrc">
+    <normaloff>:/ico/images/win.png</normaloff>:/ico/images/win.png</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
@@ -65,7 +69,7 @@
         </widget>
        </item>
        <item row="0" column="1" colspan="2">
-        <widget class="QComboBox" name="COMCB_Debug">
+        <widget class="QComboBox" name="CB_Port_Debug">
          <property name="minimumSize">
           <size>
            <width>84</width>
@@ -91,7 +95,7 @@
         </widget>
        </item>
        <item row="1" column="1" colspan="2">
-        <widget class="QComboBox" name="BAUDCB_Debug">
+        <widget class="QComboBox" name="CB_BaudRate_Debug">
          <property name="minimumSize">
           <size>
            <width>84</width>
@@ -142,7 +146,7 @@
         </widget>
        </item>
        <item row="2" column="1" colspan="2">
-        <widget class="QComboBox" name="ParityCB_Debug">
+        <widget class="QComboBox" name="CB_Parity">
          <property name="minimumSize">
           <size>
            <width>84</width>
@@ -183,7 +187,7 @@
         </widget>
        </item>
        <item row="3" column="1" colspan="2">
-        <widget class="QComboBox" name="DataBitsCB_Debug">
+        <widget class="QComboBox" name="CB_DataBits">
          <property name="minimumSize">
           <size>
            <width>84</width>
@@ -229,7 +233,7 @@
         </widget>
        </item>
        <item row="4" column="1" colspan="2">
-        <widget class="QComboBox" name="StopBitsCB_Debug">
+        <widget class="QComboBox" name="CB_StopBits">
          <property name="minimumSize">
           <size>
            <width>84</width>
@@ -270,7 +274,7 @@
         </widget>
        </item>
        <item row="5" column="1" colspan="2">
-        <widget class="QComboBox" name="FlowCtrlCB_Debug">
+        <widget class="QComboBox" name="CB_FlowCtrl">
          <property name="statusTip">
           <string>Select flowctrl</string>
          </property>
@@ -292,7 +296,7 @@
         </widget>
        </item>
        <item row="6" column="0" colspan="3">
-        <widget class="QPushButton" name="portCtrl_Debug">
+        <widget class="QPushButton" name="BT_PortSwitch">
          <property name="minimumSize">
           <size>
            <width>141</width>
@@ -305,7 +309,7 @@
         </widget>
        </item>
        <item row="7" column="0" colspan="2">
-        <widget class="QPushButton" name="saveLog">
+        <widget class="QPushButton" name="BT_SaveLog">
          <property name="maximumSize">
           <size>
            <width>61</width>
@@ -318,7 +322,7 @@
         </widget>
        </item>
        <item row="7" column="2">
-        <widget class="QPushButton" name="clearWindows">
+        <widget class="QPushButton" name="BT_Clean">
          <property name="maximumSize">
           <size>
            <width>61</width>
@@ -338,20 +342,20 @@
         </widget>
        </item>
       </layout>
-      <zorder>COMCB_Debug</zorder>
+      <zorder>CB_Port_Debug</zorder>
       <zorder>BaudLabel_2</zorder>
-      <zorder>BAUDCB_Debug</zorder>
+      <zorder>CB_BaudRate_Debug</zorder>
       <zorder>ParityLabel_2</zorder>
-      <zorder>ParityCB_Debug</zorder>
+      <zorder>CB_Parity</zorder>
       <zorder>DataBitsLabel_2</zorder>
-      <zorder>DataBitsCB_Debug</zorder>
+      <zorder>CB_DataBits</zorder>
       <zorder>StopBitsLabel_2</zorder>
-      <zorder>StopBitsCB_Debug</zorder>
+      <zorder>CB_StopBits</zorder>
       <zorder>FlowCtrlLabel_2</zorder>
-      <zorder>FlowCtrlCB_Debug</zorder>
-      <zorder>portCtrl_Debug</zorder>
-      <zorder>saveLog</zorder>
-      <zorder>clearWindows</zorder>
+      <zorder>CB_FlowCtrl</zorder>
+      <zorder>BT_PortSwitch</zorder>
+      <zorder>BT_SaveLog</zorder>
+      <zorder>BT_Clean</zorder>
       <zorder>COMLabel_2</zorder>
       <zorder>hexDisplay</zorder>
      </widget>
@@ -441,7 +445,7 @@
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_2">
             <item>
-             <widget class="QPushButton" name="PB_Bin0">
+             <widget class="QPushButton" name="BT_Bin0">
               <property name="maximumSize">
                <size>
                 <width>60</width>
@@ -454,7 +458,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="PB_Bin1">
+             <widget class="QPushButton" name="BT_Bin1">
               <property name="maximumSize">
                <size>
                 <width>60</width>
@@ -467,7 +471,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="PB_Bin2">
+             <widget class="QPushButton" name="BT_Bin2">
               <property name="maximumSize">
                <size>
                 <width>60</width>
@@ -480,7 +484,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="PB_Bin3">
+             <widget class="QPushButton" name="BT_Bin3">
               <property name="maximumSize">
                <size>
                 <width>60</width>
@@ -493,7 +497,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="PB_Bin4">
+             <widget class="QPushButton" name="BT_Bin4">
               <property name="maximumSize">
                <size>
                 <width>60</width>
@@ -735,6 +739,8 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="esp8266_tool.qrc"/>
+ </resources>
  <connections/>
 </ui>
