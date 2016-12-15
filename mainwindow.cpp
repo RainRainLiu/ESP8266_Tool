@@ -15,7 +15,8 @@ MainWindow::MainWindow(QWidget *parent) :
     scanPorts(ui->CB_Port_Download);
     serialPort = new QSerialPort();
     ui->PB_Download->setValue(0);
-    ui->PB_Download->setEnabled(false);
+    ui->clearWindows->setIcon(QIcon(":/ico/images/clean.png"));
+
 
     QObject::connect(serialPort, &QSerialPort::readyRead, this, &MainWindow::Read_Data);
 

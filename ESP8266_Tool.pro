@@ -14,8 +14,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    myserialport.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    myserialport.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    esp8266_tool.qrc
+
