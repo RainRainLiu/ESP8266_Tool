@@ -18,6 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->PB_Download->setValue(0);
     ui->BT_Clean->setIcon(QIcon(":/ico/images/clean.png"));
     ui->BT_PortSwitch->setIcon(QIcon(":/ico/images/open.png"));
+    ui->BT_SaveLog->setIcon(QIcon(":/ico/images/write.png"));
 
 
     QObject::connect(serialPort, &mySerialPort::receiceData, this, &MainWindow::receiveDebugInfo);
@@ -90,11 +91,6 @@ void MainWindow::on_BT_PortSwitch_clicked()
 
 }
 
-void MainWindow::on_CB_Port_Debug_activated(const QString &arg1)
-{
-    scanPorts(ui->CB_Port_Debug);
-    scanPorts(ui->CB_Port_Download);
-}
 /******************************************
  * @函数说明：
  * @输入参数：
@@ -104,4 +100,60 @@ void MainWindow::on_CB_Port_Debug_activated(const QString &arg1)
 void MainWindow::on_BT_Clean_clicked()
 {
     ui->TE_DdebugInfo->clear();
+}
+
+
+/******************************************
+ * @函数说明：
+ * @输入参数：
+ * @返回参数：
+ * @修订日期：
+******************************************/
+void MainWindow::on_CB_Port_Debug_activated(const QString &arg1)
+{
+    scanPorts(ui->CB_Port_Debug);
+    scanPorts(ui->CB_Port_Download);
+    ui->CB_Port_Debug->setCurrentText(arg1);
+}
+/******************************************
+ * @函数说明：
+ * @输入参数：
+ * @返回参数：
+ * @修订日期：
+******************************************/
+void MainWindow::on_CB_BaudRate_Debug_activated(const QString &arg1)
+{
+    serialPort->setBaudRate(arg1);
+}
+/******************************************
+ * @函数说明：
+ * @修订日期：
+******************************************/
+void MainWindow::on_CB_Parity_activated(const QString &arg1)
+{
+    serialPort->setParity(arg1);
+}
+/******************************************
+ * @函数说明：
+ * @修订日期：
+******************************************/
+void MainWindow::on_CB_DataBits_activated(const QString &arg1)
+{
+    serialPort->setDataBits(arg1);
+}
+/******************************************
+ * @函数说明：
+ * @修订日期：
+******************************************/
+void MainWindow::on_CB_StopBits_activated(const QString &arg1)
+{
+    serialPort->setStopBits(arg1);
+}
+/******************************************
+ * @函数说明：
+ * @修订日期：
+******************************************/
+void MainWindow::on_CB_FlowCtrl_activated(const QString &arg1)
+{
+    serialPort->setFlowCtrl(arg1);
 }

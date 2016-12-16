@@ -1,6 +1,7 @@
 #include "myserialport.h"
 #include "QtSerialPort/qserialport.h"
 #include "QtSerialPort/qserialportinfo.h"
+#include "QDebug"
 
 mySerialPort::mySerialPort(QObject *parent) : QObject(parent)
 {
@@ -17,11 +18,9 @@ mySerialPort::mySerialPort(QObject *parent) : QObject(parent)
 
 void mySerialPort::setBaudRate(QString str)
 {
-    bool result = true;
+    bool ok;
 
-    int baudRate = str.toInt(&result, 10);
-
-    serialPort->setBaudRate(baudRate);
+    serialPort->setBaudRate(str.toInt(&ok, 10));
 }
 /******************************************
  * @函数说明：
@@ -106,7 +105,7 @@ void mySerialPort::setFlowCtrl(QString str)
     {
         serialPort->setFlowControl(QSerialPort::HardwareControl);
     }
-    else if (str == "off")
+    else if (str == "soft")
     {
         serialPort->setFlowControl(QSerialPort::SoftwareControl);
     }
@@ -120,6 +119,7 @@ void mySerialPort::setFlowCtrl(QString str)
 bool mySerialPort::openPort(QString str)
 {
     serialPort->setPortName(str);
+    qDebug()<<str;
     return serialPort->open(QIODevice::ReadWrite);
 }
 /******************************************
